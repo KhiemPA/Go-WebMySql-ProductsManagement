@@ -1,0 +1,44 @@
+{{define "Create"}}
+{{template "Header"}}
+{{template "Menu"}}
+<br>
+<br>
+
+
+<div class="row"  >
+            <div class="col-md-12" style="justify-content: center; display:flex;">
+                <div class="card" style="width:60%">
+                    <div class="card-header">
+                        <h4>Product
+                            <a href="/home" class="btn btn-danger float-end">BACK</a>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="/insert">
+
+                            <div class="mb-3">
+                                <label>Name</label>
+                                <input type="text" name="productname" placeholder="productname" autofocus class="form-control"/>
+                        
+                            </div>
+                            <div class="mb-3">
+                                <label>Price</label>
+                                <input type="text" name="productprice" placeholder="productprice" class="form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label>Description</label>
+                                <input type="text" name="productdesciption" placeholder="productdescription" class="form-control"/>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <button type="submit"  class="btn btn-primary">Create Product</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{template "Footer"}}
+{{end}}

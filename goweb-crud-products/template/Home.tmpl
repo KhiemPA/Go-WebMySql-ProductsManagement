@@ -1,0 +1,44 @@
+{{ define "Home" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div style="justify-content:center; text-align: center;">
+     <h2> Products </h2>
+    <br>
+    <br>
+    <button type="button" class="btn btn-success"><a style="color:white" href="/create">Create Product</a></button>
+    </div>
+    <br>
+    <br>
+  <div style=" display:flex; justify-content:center;">
+     
+    <table class="table table-bordered table-striped table-dark" style="width:80%;"  > 
+      <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>View</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+       </thead>
+       <tbody>
+       {{ if .}}
+    {{ range . }}
+      <tr>
+        <td> {{ .ProductId }}</td>
+        <td> {{ .ProductName }} </td>
+        <td> {{ .ProductPrice }} </td>
+        <td> {{ .ProductDescription}} </td>
+        <td><button type="button" class="btn btn-primary"><a style="color:white" href="/view?id={{.ProductId}}">View</a></button></td> 
+        <td><button type="button" class="btn btn-info"><a href="/update?id={{ .ProductId }} " style="color:white">Update</a></button></td>
+        <td><button type="button" class="btn btn-danger"><a style="color:white" href="/delete?id={{ .ProductId }} " onclick="return confirm('Are you sure you want to delete ?');">Delete</a></button></td>
+      </tr>
+    {{ end }}
+    {{end}}
+       </tbody>
+    </table>
+  </div>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,57 @@
+{{define "Update"}}
+{{template "Header"}}
+{{template "Menu"}}
+<br>
+
+<br>
+<br>
+
+
+
+<h1 style="text-align:center">Update Product</h1>
+
+<div class="row" >
+            <div class="col-md-12" style=" justify-content: center;display:flex;">
+                <div class="card" style="width:60%">
+                    <div class="card-header">
+                        <h4>Product
+                            <a href="/home" class="btn btn-danger float-end">BACK</a>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/alter" method="POST">
+                        <input type="hidden" name="id" value="{{.ProductId}}"/>
+
+                          <div class="mb-3">
+                            <label>Name</label>
+                            <input type="text" name="productname" value="{{.ProductName}}" autofocus class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Price</label>
+                            <input type="text" name="productprice" value="{{.ProductPrice}}" placeholder="price" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label>Description</label>
+                            <input type="text" name="productdescription" value="{{.ProductDescription}}" placeholder="description" class="form-control"/>
+                        </div>
+
+                        <div class="mb-3">
+                                <button type="submit" name="Update Product" class="btn btn-primary">Update Product</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    
+
+{{template "Footer"}}
+{{end}}

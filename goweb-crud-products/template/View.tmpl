@@ -1,0 +1,34 @@
+{{define "View"}}
+{{template "Header"}}
+{{template "Menu"}}
+<br>
+<h1 style="text-align:center" >View Product</h1>
+<br>
+<br>
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+    <tr>
+        <th>ProductId</th>
+        <td>Name</td>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ if .}}
+    
+    <tr>
+        <td>{{.ProductId}}</td>
+        <td>{{.ProductName}}</td>
+        <td>{{.ProductPrice}}</td>
+        <td>{{.ProductDescription}}</td>
+        <td><button type="button" class="btn btn-info"><a href="/update?id={{ .ProductId }} " style="color:white">Update</a></button></td>
+        <td><button type="button" class="btn btn-danger"><a style="color:white" href="/delete?id={{ .ProductId }} " onclick="return confirm('Are you sure you want to delete ?');">Delete</a></button></td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+{{template "Footer"}}
+{{end}}
