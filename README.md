@@ -14,6 +14,11 @@ Hệ thống quản lý sản phẩm với các chức năng:
 # Hệ quản trị cơ sở dữ liệu: 
 - MySql
 
+# Cấu trúc chương trình:
+- 1 module tương tác với database (db-operation.go)
+- 1 module xử lý yêu cầu và phản hồi web, gọi tương tác với module db-operation để đọc ghi dữ liệu từ db (main.go)
+- 1 folder chứa các template
+
 # Giao diện hệ thống
 - Home page
 ![image](https://user-images.githubusercontent.com/88727271/204586494-4b83c68f-5745-439c-9975-d4a1a2186581.png)
